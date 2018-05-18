@@ -18,6 +18,14 @@ bot.command :ping do |event|
   event.respond "Pong! Time taken: #{ Time.now - event.timestamp } seconds."
 end
 
+bot.command :help do |event|
+  event << '```List of commands:'
+  event << '    !help:   displays info about commands.'
+  event << '    !water start:   this starts a timer that will remind you to drink water each hour.'
+  event << '    !water stop:    stops the water reminder.'
+  event << '    !ping:  Replies with "Pong!" as well as the time taken to respond. Good for testing connection.```'
+end
+
 # Runs the water tracking functionality. Reminds user to drink water
 # args is an Array, of max size 1
 bot.command( :water, max_args: 1 ) do |_event, *args|
@@ -38,6 +46,10 @@ bot.command( :water, max_args: 1 ) do |_event, *args|
     _event.respond re.unknown_command( command ) 
   end
 
+end
+
+bot.command :thanks do |event|
+     event.respond 'No problem. I just want to help! :smile:'
 end
 
 bot.run
