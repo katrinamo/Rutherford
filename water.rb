@@ -45,9 +45,9 @@ class WaterTracker
 
       if (@remind_time - Time.now) <= 0
         user.pm("Have you had some water recently? Make sure to keep hydrated! <3")
-        puts "Water reminder sent. #{ Time.now }\n"
+        puts "Water reminder sent.\n"
         @start_time = Time.now
-        @remind_time = @start_time + 10
+        @remind_time = @start_time + 3600
       end
 
     end
