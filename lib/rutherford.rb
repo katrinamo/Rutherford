@@ -23,7 +23,8 @@ bot.command :help do |event|
   event << '    !help:   displays info about commands.'
   event << '    !water start:   this starts a timer that will remind you to drink water each hour.'
   event << '    !water stop:    stops the water reminder.'
-  event << '    !ping:  Replies with "Pong!" as well as the time taken to respond. Good for testing connection.```'
+  event << '    !ping:  Replies with "Pong!" as well as the time taken to respond. Good for testing connection.'
+  event << '    !thanks:  Thank Rutherford for his hard work.```'
 end
 
 # Runs the water tracking functionality. Reminds user to drink water
