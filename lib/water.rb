@@ -4,19 +4,10 @@
 class WaterTracker
   @@ONE_HOUR = 3600     # One hour in seconds
   def initialize()
-    # "@" means this variable is an INSTANCE variable. Descriptions:
-    #   @trackers: a hash table that keeps track of which water tracker
+    #   trackers: a hash table that keeps track of which water tracker
     #              belongs to which user. Allows for multiple water
     #              water trackers to be going on simultaneously
-    #   @start_time: start time for an instance of WaterTracker
-    #   @remind_time: the time the user will be reminded to drink water
-    #                 caluclated by adding one hour in seconds to 
-    #                 @start_time
-    #   @hours_passed: count of how many hours have passed
     @trackers = Hash.new(nil)
-    @start_time = Time.now
-    @remind_time = @start_time + @@ONE_HOUR
-    @hours_passed = 0
   end
 
   def water(command, user)
@@ -41,15 +32,23 @@ class WaterTracker
   end
 
   def tracking_time(user)
+    #   start_time: start time for an instance of WaterTracker
+    #   remind_time: the time the user will be reminded to drink water
+    #                 caluclated by adding one hour in seconds to 
+    #                 @start_time
+    #   hours_passed: count of how many hours have passed
+    start_time = Time.now
+    remind_time = start_time + @@ONE_HOUR
+    hours_passed = 0
 
-    while @hours_passed < 4  do
+    while hours_passed < 4  do
 
-      if ( ( @remind_time - Time.now ) <= 0 )
+      if ( ( remind_time - Time.now ) <= 0 )
         user.pm("Have you had some water recently? Make sure to keep hydrated! :heart:")
         puts "Water reminder sent.\n"
-        @start_time = Time.now
-        @remind_time = @start_time + @@ONE_HOUR
-        @hours_passed = @hours_passed + 1
+        start_time = Time.now
+        remind_time = start_time + @@ONE_HOUR
+        hours_passed = hours_passed + 1
       end
 
     end
