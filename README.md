@@ -3,9 +3,10 @@ Rutherford is a humble Discord bot written in Ruby that uses the
 discordrb API. He's currently only accepting a few commands.
 
 ## Installation
+Install RVM using a guide such as: https://rvm.io/rvm/install
 
 Make sure you have rvm installed using Ruby 2.3. Use bundle to install
-discordrb as specified in its installation instructions.
+discordrb as specified in its installation instructions. https://github.com/meew0/discordrb
 
 Clone this repository and add your token. To run simply type:
 
