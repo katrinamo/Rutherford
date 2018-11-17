@@ -23,7 +23,7 @@ Displays the current commands with a description.
 Starts or stops a water tracker that operates for at max four hours. 
 Every hour it sends the user a message reminding them (gently) to drink
 some water. Ideal for people who forget during intense gaming, coding,
-or working sessiong.
+or working sessions.
 
 `ping` 
 Reponds with 'Pong!' and the response time. Taken from the discordrb
